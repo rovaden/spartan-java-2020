@@ -22,16 +22,21 @@ import frc.robot.subsystems.ExampleSubsystem;
 public class RobotContainer
 {
     // The robot's subsystems and commands are defined here...
-    private final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
-
-    private final ExampleCommand autonomousCommand = new ExampleCommand(exampleSubsystem);
-
+    private DrivetrainSubsystem drivetrainsubsystem;
+    public final Joystick leftJoy;
+    public final Joystick rightJoy;
 
     /**
      * The container for the robot.  Contains subsystems, OI devices, and commands.
      */
     public RobotContainer()
     {
+        leftJoy = new Joystick(Constants.JOYSTICK);
+        rightJoy = new Joystick(Constants.JOYSTICK);
+
+        drivetrainSubsystem = new DrivetrainSubsystem();
+        
+
         // Configure the button bindings
         configureButtonBindings();
     }
@@ -47,6 +52,21 @@ public class RobotContainer
         
     }
 
+    public double getLeftY() {
+        return leftJoy.getY();   
+    }
+
+    public double getLeftX() {
+        return leftJoy.getX();
+    }
+
+    public double getRightY() {
+        return rightJoy.getY();
+    }
+
+    public double getRightX() {
+        return leftJoy.getX();
+    }
 
     /**
      * Use this to pass the autonomous command to the main {@link Robot} class.

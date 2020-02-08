@@ -22,4 +22,6 @@ public final class Constants
     public static int RIGHT_VICTOR_1 = 2;
     public static int RIGHT_VICTOR_2 = 3;
 
+    public static int JOYSTICK = 0;
+
 }

@@ -19,5 +19,18 @@ public class DriveTrainSubsystem extends SubsystemBase {
         leftVictor1 = new Victor(Constants.RIGHT_VICTOR_2);
     }
 
-}
+    public void drive(double leftPower, double rightPower) {
+        leftVictor1.set(leftPower);
+        leftVictor2.set(leftPower);
+        rightVictor1.set(rightPower);
+        rightVictor2.set(rightPower);
+    }
 
+    @Override
+    public void periodic() {
+        double leftY = Robot.robotContainer.leftJoy.getY();
+        double rightY = Robot.robotContainer.rightJoy.getY();
+        drive(leftY, rightY);
+    }
+
+}
