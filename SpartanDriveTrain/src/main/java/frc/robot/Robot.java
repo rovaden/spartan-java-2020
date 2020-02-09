@@ -22,7 +22,7 @@ public class Robot extends TimedRobot
 {
     private Command autonomousCommand;
 
-    private RobotContainer robotContainer;
+    public static RobotContainer robotContainer;
 
     /**
      * This method is run when the robot is first started up and should be used for any
@@ -72,7 +72,7 @@ public class Robot extends TimedRobot
     @Override
     public void autonomousInit()
     {
-        autonomousCommand = robotContainer.getAutonomousCommand();
+        
 
         // schedule the autonomous command (example)
         if (autonomousCommand != null)

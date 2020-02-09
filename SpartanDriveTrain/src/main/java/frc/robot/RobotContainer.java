@@ -8,21 +8,21 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.commands.ExampleCommand;
-import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.DriveTrainSubsystem;
 
 /**
- * This class is where the bulk of the robot should be declared.  Since Command-based is a
- * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
- * periodic methods (other than the scheduler calls).  Instead, the structure of the robot
- * (including subsystems, commands, and button mappings) should be declared here.
+ * This class is where the bulk of the robot should be declared. Since
+ * Command-based is a "declarative" paradigm, very little robot logic should
+ * actually be handled in the {@link Robot} periodic methods (other than the
+ * scheduler calls). Instead, the structure of the robot (including subsystems,
+ * commands, and button mappings) should be declared here.
  */
-public class RobotContainer
-{
+public class RobotContainer {
     // The robot's subsystems and commands are defined here...
-    private DrivetrainSubsystem drivetrainsubsystem;
+    private DriveTrainSubsystem drivetrainsubsystem;
     public final Joystick leftJoy;
     public final Joystick rightJoy;
 
@@ -34,7 +34,7 @@ public class RobotContainer
         leftJoy = new Joystick(Constants.JOYSTICK);
         rightJoy = new Joystick(Constants.JOYSTICK);
 
-        drivetrainSubsystem = new DrivetrainSubsystem();
+        drivetrainsubsystem = new DriveTrainSubsystem();
         
 
         // Configure the button bindings
@@ -68,14 +68,6 @@ public class RobotContainer
         return leftJoy.getX();
     }
 
-    /**
-     * Use this to pass the autonomous command to the main {@link Robot} class.
-     *
-     * @return the command to run in autonomous
-     */
-    public Command getAutonomousCommand()
-    {
-        // An ExampleCommand will run in autonomous
-        return autonomousCommand;
-    }
+    
+  
 }
