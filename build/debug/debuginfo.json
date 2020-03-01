@@ -1,0 +1,16 @@
+[
+  {
+    "artifact": "frcJava (in project spartan-java-2020)",
+    "target": "roborio",
+    "debugfile": "frcJava_roborio.debugconfig",
+    "project": "spartan-java-2020",
+    "language": "java"
+  },
+  {
+    "artifact": "frcJava (in project SpartanDriveTrain)",
+    "target": "roborio",
+    "debugfile": "frcJava_roborio.debugconfig",
+    "project": "SpartanDriveTrain",
+    "language": "java"
+  }
+]
