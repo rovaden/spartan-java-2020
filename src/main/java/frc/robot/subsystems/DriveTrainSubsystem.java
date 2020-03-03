@@ -36,19 +36,36 @@ public class DriveTrainSubsystem extends SubsystemBase {
         rightVictor1.set(ControlMode.PercentOutput, rightPower);
         rightVictor2.set(ControlMode.PercentOutput, rightPower);
     }
-
-    public void arcadeDrive(double forward, double rotation) {
-
-        differentialDrive.arcadeDrive(forward, rotation);
-
-    }
+//
+//    public void arcadeDrive(double forward, double rotation) {
+//
+//        differentialDrive.arcadeDrive(forward, rotation);
+//
+//    }
 
     @Override
     public void periodic() {
-        double leftPower = Robot.robotContainer.getLeftY();
-        double rightPower = Robot.robotContainer.getRightX();
-        // drive(leftPower, -rightPower);
-        arcadeDrive(leftPower, rightPower);
-    }
 
+        double leftPower = Robot.robotContainer.getLeftY();
+        double rightPower = Robot.robotContainer.getRightY();
+        drive(rightPower, -leftPower);
+
+       
+    }
+//        System.out.println(Robot.robotContainer.primaryJoy.getButtonCount());
+//
+//        int button = Robot.robotContainer.primaryJoy.getButtonCount();
+//        switch (button)
+//        {
+//             case 5 :
+//                 double forwardPower = Robot.robotContainer.getLeftY();
+//                 double turnPower = Robot.robotContainer.getRightX();
+//                 arcadeDrive(forwardPower, turnPower);
+//                 break;
+//            case 6 :
+//                double leftPower = Robot.robotContainer.getLeftY();
+//                double rightPower = Robot.robotContainer.getRightY();
+//                drive(leftPower, rightPower);
+//                break;
+//        }
 }
